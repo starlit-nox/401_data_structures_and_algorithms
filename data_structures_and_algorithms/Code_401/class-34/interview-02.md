@@ -68,4 +68,5 @@ Record detailed notes on the rubric, to share with the candidate when the interv
 <details>
   <summary>Big O</summary>
   Since we need to read all values present in the input string, this method requires a time complexity of 0(n).  And since we are storing all characters in a Hashset, at worst case we would store all characters in another structure, so our space complexity would also reach 0(n).
+  
 </details>
