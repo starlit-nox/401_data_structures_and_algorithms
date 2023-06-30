@@ -3,24 +3,33 @@ using Xunit;
 
 namespace CodeChallengeTests
 {
-
-  public class CodeChallenge1Test
-  {
-
-    [Fact]
-    public void ReverseArray_Test()
+    public class CodeChallenge1Test
     {
-      int[] testArray1 = { 1, 2, 3, 4, 5 };
-      int[] expectedResult1 = { 5, 4, 3, 2, 1 };
+        [Fact]
+        public void ReverseArray_WithIntArray_ReturnsReversedArray()
+        {
+            // Arrange
+            int[] inputArray = { 1, 2, 3, 4, 5 };
+            int[] expectedArray = { 5, 4, 3, 2, 1 };
 
-      string[] testArray2 = { "red", "blue", "green", "purple"};
-      string[] expectedResult2 = { "purple", "green", "blue", "red"};
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
 
-      Array result1 = CodeChallenge1.ReverseArray(testArray1);
-      // Array result2 = CodeChallenge1.ReverseArray(testArray2);
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
 
-      Assert.Equal(result1, expectedResult1);
-      // Assert.Equal(result2, expectedResult2);
+        [Fact]
+        public void ReverseArray_WithEmptyArray_ReturnsSameArray()
+        {
+            // Arrange
+            int[] inputArray = new int[0];
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(inputArray, result);
+        }
     }
-  }
 }

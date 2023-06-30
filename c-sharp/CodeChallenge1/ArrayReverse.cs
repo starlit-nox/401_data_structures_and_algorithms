@@ -3,10 +3,12 @@ namespace CodeChallenges
 {
     public class CodeChallenge1
     {
-        public static Array ReverseArray(Array array)
+        public static int[] ReverseArray(int[] array)
         {
+            int[] reversedArray = new int[array.Length];
+
             //Reverse the array before returning it
-            return array;
+            return reversedArray;
         }
     }
 }
