@@ -2,7 +2,7 @@ namespace LinkedLists
 {
     public class LinkedList
     {
-        public void LinkedList()
+        public LinkedList()
         {
             
         }
