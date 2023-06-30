@@ -1,11 +1,12 @@
 using System.Collections;
-namespace ArrayReverses 
+namespace CodeChallenges
 {
-    public class ArrayReverse
+    public class CodeChallenge1
     {
-        public void ReverseArray()
+        public static Array ReverseArray(Array array)
         {
-            
+            //Reverse the array before returning it
+            return array;
         }
     }
 }
