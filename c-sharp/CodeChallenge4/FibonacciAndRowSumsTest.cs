@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class FibonacciTest
+  public class CodeChallenge4Test
   {
     [Fact]
     public void GetNthNumberInFibonacciSequence_Test()

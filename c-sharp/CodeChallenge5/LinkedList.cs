@@ -1,4 +1,4 @@
-namespace LinkedLists 
+namespace CodeChallenges 
 {
     public class LinkedList
     {

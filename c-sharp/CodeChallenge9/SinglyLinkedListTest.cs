@@ -1,9 +1,9 @@
-using SinglyLinkedLists;
+using CodeChallenges;
 using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class SinglyLinkedListTest
+  public class CodeChallenge9Test
   {
     [Fact]
     public void Reverse_Test()

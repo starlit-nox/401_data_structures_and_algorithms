@@ -1,8 +1,10 @@
-namespace LinkedListZips 
+// using System.Collections.Generic;
+
+namespace CodeChallenges
 {
-    public class LinkedListZip
+    public class CodeChallenge8
     {
-        public void ZipLinkedList()
+        public LinkedList<int> ZipLists(LinkedList<int> aa)
         {
             
         }

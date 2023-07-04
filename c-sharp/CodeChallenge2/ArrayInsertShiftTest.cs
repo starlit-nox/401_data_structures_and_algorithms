@@ -1,9 +1,9 @@
 using CodeChallenges;
 using Xunit;
 
-namespace ArrayInsertShiftTests
+namespace CodeChallengeTests
 {
-  public class ArrayInsertShiftTest
+  public class CodeChallenge2Test
   {
     [Fact]
     public void InsertShiftArray_With_OddNumber_Of_Elements()

@@ -1,6 +1,14 @@
-namespace StackAndQueues 
+namespace CodeChallenges 
 {
-    public class StackAndQueue
+    public class Stack
+    {
+        public void Push()
+        {
+            
+        }
+    }
+
+    public class Queue
     {
         public void Push()
         {

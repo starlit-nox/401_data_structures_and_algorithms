@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class ArrayBinarySearchTest
+  public class CodeChallenge3Test
   {
     [Fact]
     public void BinarySearch_Test()

@@ -1,9 +1,9 @@
-using LinkedListZips;
+using CodeChallenges;
 using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class LinkedListZipTest
+  public class CodeChallenge8Test
   {
     [Fact]
     public void ZipLinkedList_Test()

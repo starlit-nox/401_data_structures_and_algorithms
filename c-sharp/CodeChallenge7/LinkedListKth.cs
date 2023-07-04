@@ -1,4 +1,4 @@
-namespace LinkedListKths 
+namespace CodeChallenges 
 {
     public class LinkedListKth
     {

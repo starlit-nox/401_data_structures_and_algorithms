@@ -1,6 +1,6 @@
-namespace LinkedListInserts 
+namespace CodeChallenges 
 {
-    public class LinkedListInsert
+    public class InsertableLinkedList
     {
         public void Insert()
         {

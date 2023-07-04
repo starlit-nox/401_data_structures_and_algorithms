@@ -1,9 +1,9 @@
-using LinkedLists;
+using CodeChallenges;
 using Xunit;
 
-namespace LinkedListTests
+namespace CodeChallengeTests
 {
-  public class LinkedListTest
+  public class CodeChallenge5Test
   {
     [Fact]
     public void LinkedList_Test()
