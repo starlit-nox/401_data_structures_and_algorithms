@@ -1,4 +1,4 @@
-using LinkedListInserts;
+using CodeChallenges;
 using Xunit;
 
 namespace CodeChallengeTests

@@ -1,9 +1,9 @@
-using LinkedListKths;
+using CodeChallenges;
 using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class LinkedListKthTest
+  public class CodeChallenge7Test
   {
     [Fact]
     public void KthFromEnd_Test()
