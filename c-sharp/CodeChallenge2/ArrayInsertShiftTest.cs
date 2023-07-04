@@ -1,4 +1,4 @@
-using ArrayInsertShifts;
+using CodeChallenges;
 using Xunit;
 
 namespace ArrayInsertShiftTests
@@ -6,9 +6,15 @@ namespace ArrayInsertShiftTests
   public class ArrayInsertShiftTest
   {
     [Fact]
-    public void InsertShiftArray_Test()
+    public void InsertShiftArray_With_OddNumber_Of_Elements()
     {
-      Assert.Equal(true, true);
+      int[] inputArray = { 1, 2, 3, 4, 5, 6 };
+      int inputValue = 7;
+      int[] expectedArray = { 1, 2, 3, 7, 4, 5, 6 };
+
+      int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
+
+      Assert.Equal(result, expectedArray);
     }
   }
 }

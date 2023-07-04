@@ -1,10 +1,11 @@
-namespace ArrayInsertShifts 
+namespace CodeChallenges 
 {
-    public class ArrayInsertShift
+    public class CodeChallenge2
     {
-        public void InsertShiftArray()
+        public static int[] InsertShiftArray(int[] array, int value)
         {
-            
+            //insert the value into the middle of the array
+            return array;
         }
     }
 }
