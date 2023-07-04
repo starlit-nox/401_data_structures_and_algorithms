@@ -1,7 +1,7 @@
 using StackAndQueues;
 using Xunit;
 
-namespace StackAndQueueTests
+namespace CodeChallengeTests
 {
   public class StackAndQueueTest
   {

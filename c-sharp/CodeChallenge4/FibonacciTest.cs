@@ -1,7 +1,7 @@
-using Fibonaccis;
+using CodeChallenges;
 using Xunit;
 
-namespace Fibonacci
+namespace CodeChallengeTests
 {
   public class FibonacciTest
   {

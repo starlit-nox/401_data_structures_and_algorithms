@@ -1,7 +1,7 @@
 using LinkedListInserts;
 using Xunit;
 
-namespace LinkedListInsertTests
+namespace CodeChallengeTests
 {
   public class LinkedListInsertTest
   {

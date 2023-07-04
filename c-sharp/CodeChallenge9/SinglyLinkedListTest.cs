@@ -1,7 +1,7 @@
 using SinglyLinkedLists;
 using Xunit;
 
-namespace SinglyLinkedListTests
+namespace CodeChallengeTests
 {
   public class SinglyLinkedListTest
   {

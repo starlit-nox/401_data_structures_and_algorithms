@@ -2,8 +2,6 @@
 
 **Assignment 1**
 Write a function to add up the sum of each row in a matrix of arbitrary size, and return an array with the appropriate values.
-----> DO NOT USE ANY BUILTIN METHODS!! <-----
 
 **Assignment 2**
 Write a function to accepts an integer, and returns the nth number in the Fibonacci sequence.
-----> DO NOT USE ANY BUILTIN METHODS!! <-----

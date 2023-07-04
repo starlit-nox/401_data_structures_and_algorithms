@@ -1,7 +1,7 @@
 using LinkedListZips;
 using Xunit;
 
-namespace LinkedListZipTests
+namespace CodeChallengeTests
 {
   public class LinkedListZipTest
   {

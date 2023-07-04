@@ -1,7 +1,7 @@
 using RowSumss;
 using Xunit;
 
-namespace RowSumsTests
+namespace CodeChallengeTests
 {
   public class RowSumsTest
   {

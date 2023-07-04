@@ -1,7 +1,7 @@
 using LinkedListKths;
 using Xunit;
 
-namespace LinkedListKthTests
+namespace CodeChallengeTests
 {
   public class LinkedListKthTest
   {
