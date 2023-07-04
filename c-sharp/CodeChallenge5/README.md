@@ -2,6 +2,7 @@
 
 **Assignment**
 Create a class for a data-structure called a LinkedList.
+Create a class for a data-structure called a Node.
 Your LinkedList class should have methods for:
 
     Adding new node with a given value to the head of the list.

@@ -31,5 +31,18 @@ namespace CodeChallengeTests
             // Assert
             Assert.Equal(inputArray, result);
         }
+        [Fact]
+        public void ReverseArray_WithNegativeNumbers_ReturnsReversedArray()
+        {
+            // Arrange
+            int[] inputArray = { -3, -2, -1, 0, 1, 2, 3 };
+            int[] expectedArray = { 3, 2, 1, 0, -1, -2, -3 };
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
     }
 }
