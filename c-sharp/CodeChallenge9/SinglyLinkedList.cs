@@ -1,8 +1,8 @@
-namespace SinglyLinkedLists 
+namespace CodeChallenges 
 {
-    public class SinglyLinkedList
+    public class CodeChallenge9
     {
-        public void Reverse()
+        public void ReverseLinkedList()
         {
             
         }
