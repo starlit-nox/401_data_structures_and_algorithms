@@ -1,7 +1,7 @@
 using CodeChallenges;
 using Xunit;
 
-namespace ArrayBinarySearchTests
+namespace CodeChallengeTests
 {
   public class ArrayBinarySearchTest
   {
