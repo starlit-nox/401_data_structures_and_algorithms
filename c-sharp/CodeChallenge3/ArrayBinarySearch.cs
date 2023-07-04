@@ -1,10 +1,11 @@
-namespace ArrayBinarySearchs 
+namespace CodeChallenges 
 {
-    public class ArrayBinarySearch
+    public class CodeChallenge3
     {
-        public void BinarySearch()
+        public static int BinarySearch(int[] array, int key)
         {
-            
+            int foundElementIndex = -1;
+            return foundElementIndex;
         }
     }
 }

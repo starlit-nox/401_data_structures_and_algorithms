@@ -1,4 +1,4 @@
-using ArrayBinarySearchs;
+using CodeChallenges;
 using Xunit;
 
 namespace ArrayBinarySearchTests
@@ -8,7 +8,10 @@ namespace ArrayBinarySearchTests
     [Fact]
     public void BinarySearch_Test()
     {
-      Assert.Equal(true, true);
+      int[] inputArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+      int searchKey = 3;
+      int result = CodeChallenge3.BinarySearch(inputArray, searchKey);
+      Assert.Equal(result, 3);
     }
   }
 }
