@@ -2,6 +2,7 @@ namespace CodeChallenges
 {
     public class LinkedList
     {
+
         public void AddNewNode()
         {
             
