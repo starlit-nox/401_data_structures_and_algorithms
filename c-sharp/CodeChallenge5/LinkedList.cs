@@ -2,7 +2,7 @@ namespace CodeChallenges
 {
     public class LinkedList
     {
-        public Node? Head;
+        public Node Head;
         public void AddNewNode(Node node)
         {
             node.Next = Head;

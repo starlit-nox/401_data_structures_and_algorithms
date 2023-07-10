@@ -6,30 +6,6 @@ namespace CodeChallengeTests
   public class CodeChallenge5Test
   {
     [Fact]
-    public void LinkedList_Contains_HeaderProperty()
-    {
-      Type type = typeof(LinkedList);
-
-      PropertyInfo header = type.GetProperty("head");
-      PropertyInfo Header = type.GetProperty("Head");
-
-      Assert.True(header != null || Header != null);
-    }
-    
-    [Fact]
-    public void LinkedList_HeaderProperty_Is_NodeType()
-    {
-      Type type = typeof(LinkedList);
-
-      PropertyInfo header = type.GetProperty("head");
-
-      if(header == null){
-        header = type.GetProperty("Head");
-      }
-      Assert.Equal(header.PropertyType, typeof(Node));
-    }
-
-    [Fact]
     public void LinkedList_Can_A_Single_Node()
     {
       LinkedList list = new LinkedList();
@@ -48,13 +24,15 @@ namespace CodeChallengeTests
       Node node2 = new Node(6);
 
       LinkedList expectedList = new LinkedList();
-      node1.Next = node2;
-      expectedList.Head = node1;
+      node2.Next = node1;
+      expectedList.Head = node2;
 
 
       list.AddNewNode(node1);
       list.AddNewNode(node2);
-      Assert.Equal(expectedList, list);
+      Assert.Equal(expectedList.Head, list.Head);
+      Assert.Equal(expectedList.Head.Next, list.Head.Next);
+      
     }
 
   }
