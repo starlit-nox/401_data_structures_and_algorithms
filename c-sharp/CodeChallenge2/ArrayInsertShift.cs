@@ -1,4 +1,4 @@
-namesp namespace CodeChallenges
+namespace CodeChallenges
 {
   public class CodeChallenge2
   {
@@ -10,6 +10,7 @@ namesp namespace CodeChallenges
 
       int middleIndex = length / 2;
 
+      //loop
       for (int i = 0; i < newArray.Length; i++)
       {
         if (i < middleIndex)
