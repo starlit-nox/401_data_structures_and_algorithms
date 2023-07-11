@@ -3,63 +3,46 @@ using Xunit;
 
 namespace CodeChallengeTests
 {
-  public class CodeChallenge2Test
-  {
-    [Fact]
-    public void InsertShiftArray_With_OddNumber_Of_Elements()
+    public class CodeChallenge1Test
     {
-      int[] inputArray = { 1, 2, 3, 4, 5, 6, 7 };
-      int inputValue = 9;
-      int[] expectedArray = { 1, 2, 3, 9, 4, 5, 6, 7 };
+        [Fact]
+        public void ReverseArray_WithIntArray_ReturnsReversedArray()
+        {
+            // Arrange
+            int[] inputArray = { 1, 2, 3, 4, 5 };
+            int[] expectedArray = { 5, 4, 3, 2, 1 };
 
-      int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
 
-      Assert.Equal(result, expectedArray);
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
+
+        [Fact]
+        public void ReverseArray_WithEmptyArray_ReturnsSameArray()
+        {
+            // Arrange
+            int[] inputArray = new int[0];
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(inputArray, result);
+        }
+        [Fact]
+        public void ReverseArray_WithNegativeNumbers_ReturnsReversedArray()
+        {
+            // Arrange
+            int[] inputArray = { -3, -2, -1, 0, 1, 2, 3 };
+            int[] expectedArray = { 3, 2, 1, 0, -1, -2, -3 };
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
     }
-    [Fact]
-    public void InsertShiftArray_With_EvenNumber_Of_Elements()
-    {
-      // Arrange
-      int[] inputArray = { 1, 2, 3, 4, 5, 6 };
-      int inputValue = 7;
-      int[] expectedArray = { 1, 2, 3, 7, 4, 5, 6 };
-
-      // Act
-      int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
-
-      // Assert
-      Assert.Equal(expectedArray, result);
-    }
-
-    [Fact]
-    public void InsertShiftArray_With_EmptyArray()
-    {
-      // Arrange
-      int[] inputArray = new int[0];
-      int inputValue = 1;
-      int[] expectedArray = { 1 };
-
-      // Act
-      int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
-
-      // Assert
-      Assert.Equal(expectedArray, result);
-    }
-
-
-    [Fact]
-    public void InsertShiftArray_With_NegativeNumbers()
-    {
-      // Arrange
-      int[] inputArray = { -3, -2, -1, 0, 1 };
-      int inputValue = -4;
-      int[] expectedArray = { -3, -2, -4, -1, 0, 1 };
-
-      // Act
-      int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
-
-      // Assert
-      Assert.Equal(expectedArray, result);
-    }
-  }
 }
