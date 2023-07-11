@@ -1,26 +1,48 @@
-namespace CodeChallenges
+using CodeChallenges;
+using Xunit;
+
+namespace CodeChallengeTests
 {
-  public class CodeChallenge2Modified : CodeChallenge2
-  {
-    public new static int[] InsertShiftArray(int[] array, int value)
+    public class CodeChallenge1Test
     {
-      int middleIndex = array.Length / 2;
-      int[] newArray = new int[array.Length + 1];
-
-      for (int i = 0, j = 0; i < newArray.Length; i++, j++)
-      {
-        if (i == middleIndex)
+        [Fact]
+        public void ReverseArray_WithIntArray_ReturnsReversedArray()
         {
-          newArray[i] = value;
-          j--;
-        }
-        else
-        {
-          newArray[i] = array[j];
-        }
-      }
+            // Arrange
+            int[] inputArray = { 1, 2, 3, 4, 5 };
+            int[] expectedArray = { 5, 4, 3, 2, 1 };
 
-      return newArray;
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
+
+        [Fact]
+        public void ReverseArray_WithEmptyArray_ReturnsSameArray()
+        {
+            // Arrange
+            int[] inputArray = new int[0];
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(inputArray, result);
+        }
+        [Fact]
+        public void ReverseArray_WithNegativeNumbers_ReturnsReversedArray()
+        {
+            // Arrange
+            int[] inputArray = { -3, -2, -1, 0, 1, 2, 3 };
+            int[] expectedArray = { 3, 2, 1, 0, -1, -2, -3 };
+
+            // Act
+            var result = CodeChallenge1.ReverseArray(inputArray);
+
+            // Assert
+            Assert.Equal(expectedArray, result);
+        }
     }
-  }
 }
