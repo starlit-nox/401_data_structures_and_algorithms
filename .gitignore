@@ -233,6 +233,5 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
 .vscode
-c-sharp/CodeChallenge5/LinkedList.cs
 c-sharp/CodeChallenge4/FibonacciAndRowSums.cs
 c-sharp/CodeChallenge6/LinkedListInsert.cs
