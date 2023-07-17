@@ -2,7 +2,7 @@ namespace CodeChallenges
 {
     public class LinkedList
     {
-        public Node Head {get; set;}
+        // public Node Head {get; set;}
 
     }
 
