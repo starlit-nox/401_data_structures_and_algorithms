@@ -6,6 +6,21 @@ namespace CodeChallengeTests
   public class CodeChallenge5Test
   {
     [Fact]
+    public void LinkedList_Has_Head_Property()
+    {
+      PropertyInfo head = typeof(LinkedList).GetProperty("Head");
+      Assert.NotNull(head);
+    }
+
+    [Fact]
+    public void LinkedList_Head_Property_Is_Node()
+    {
+      PropertyInfo head = typeof(LinkedList).GetProperty("Head");
+      Type headType = head.PropertyType;
+      Assert.Equal(typeof(Node), headType);
+    }
+
+    [Fact]
     public void LinkedList_Can_Add_Single_Value()
     {
       MethodInfo insertMethod = typeof(LinkedList).GetMethod("Insert");
@@ -14,7 +29,16 @@ namespace CodeChallengeTests
 
       int value = 5;
       insertMethod.Invoke(list, new object[]{value});
-      Assert.Equal(value, list.Head.Value);
+      PropertyInfo head = typeof(LinkedList).GetProperty("Head");
+
+      Type headType = head.PropertyType;
+      Node headValue = (Node)head.GetValue(list);
+
+      PropertyInfo ValueProperty = typeof(Node).GetProperty("Value");
+      
+      int result = (int)ValueProperty.GetValue(headValue);
+
+      Assert.Equal(value, result);
     }
 
     [Fact]
@@ -28,8 +52,22 @@ namespace CodeChallengeTests
       insertMethod.Invoke(list, new object[]{value});
       insertMethod.Invoke(list, new object[]{value2});
 
-      Assert.Equal(value2, list.Head.Value);
-      Assert.Equal(value, list.Head.Next.Value);
+      PropertyInfo head = typeof(LinkedList).GetProperty("Head");
+
+      Type headType = head.PropertyType;
+      Node headValue = (Node)head.GetValue(list);
+
+      PropertyInfo ValueProperty = typeof(Node).GetProperty("Value");
+      
+      int result1 = (int)ValueProperty.GetValue(headValue);
+      
+      PropertyInfo NextProperty = typeof(Node).GetProperty("Next");
+      Node headValue2 = (Node)NextProperty.GetValue(headValue);
+
+      int result2 = (int)ValueProperty.GetValue(headValue2);
+
+      Assert.Equal(value2, result1);
+      Assert.Equal(value, result2);
     }
 
     [Fact]
@@ -63,6 +101,7 @@ namespace CodeChallengeTests
       Assert.True(result2);
       Assert.True(result3);
       Assert.True(result4);
+      Assert.True(result5);
     }
 
     [Fact]
@@ -113,7 +152,7 @@ namespace CodeChallengeTests
       MethodInfo toStringMethod = typeof(LinkedList).GetMethod("ToString");
       Assert.True(toStringMethod != null);
 
-      string expectedString = "5 -> 6 -> NULL";
+      string expectedString = "6 -> 5 -> NULL";
       string result = (string)toStringMethod.Invoke(list, new object[]{});;
 
       Assert.Equal(expectedString, result);
