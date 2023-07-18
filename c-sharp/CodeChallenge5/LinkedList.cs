@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace CodeChallenges
 {
   public class LinkedList
