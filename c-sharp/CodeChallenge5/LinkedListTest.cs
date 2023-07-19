@@ -31,10 +31,10 @@ namespace CodeChallengeTests
       insertMethod.Invoke(list, new object[]{value});
       PropertyInfo head = typeof(LinkedList).GetProperty("Head");
 
-      Type headType = head.PropertyType;
       Node headValue = (Node)head.GetValue(list);
 
       PropertyInfo ValueProperty = typeof(Node).GetProperty("Value");
+      
       
       int result = (int)ValueProperty.GetValue(headValue);
 
