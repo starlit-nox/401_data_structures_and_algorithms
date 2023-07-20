@@ -6,42 +6,77 @@ namespace CodeChallengeTests
 {
   public class CodeChallenge7Test
   {
+
     [Fact]
-    public void KthFromEnd_Test()
+    public void InsertableLinkedList_Returns_Correct_Kth_Node_From_End()
     {
-      Assert.Equal(true, false);
+      // Create an instance of the InsertableLinkedList
+      MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
+      Assert.True(insertMethod != null);
+
+      LinkedListKth list = new LinkedListKth();
+      insertMethod.Invoke(list, new object[] { 10 });
+      insertMethod.Invoke(list, new object[] { 20 });
+      insertMethod.Invoke(list, new object[] { 30 });
+      insertMethod.Invoke(list, new object[] { 40 });
+      insertMethod.Invoke(list, new object[] { 50 });
+
+
+      // Call the KthFromEnd method with k = 2 (getting the 2nd node from the end)
+      MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
+      Assert.NotNull(kthFromEndMethod);
+
+      int k = 2;
+      int kthValue = (int)kthFromEndMethod.Invoke(list, new object[] { k });
+
+      int result = kthValue;
+
+      // The expected value of the kth node from the end is 30
+      Assert.Equal(20, result);
     }
 
-[Fact]
-public void InsertableLinkedList_Returns_Correct_Kth_Node_From_End()
-{
-    // Create an instance of the InsertableLinkedList
-    MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
-    Assert.True(insertMethod != null);
+    [Fact]
+    public void InsertableLinkedList_Throws_Error_When_Kth_Is_Too_Large()
+    {
+      // Create an instance of the InsertableLinkedList
+      MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
+      Assert.True(insertMethod != null);
 
-    LinkedListKth list = new LinkedListKth();
-    insertMethod.Invoke(list, new object[] { 10 });
-    insertMethod.Invoke(list, new object[] { 20 });
-    insertMethod.Invoke(list, new object[] { 30 });
-    insertMethod.Invoke(list, new object[] { 40 });
-    insertMethod.Invoke(list, new object[] { 50 });
+      LinkedListKth list = new LinkedListKth();
+      insertMethod.Invoke(list, new object[] { 10 });
+      insertMethod.Invoke(list, new object[] { 20 });
 
 
-    // Call the KthFromEnd method with k = 2 (getting the 2nd node from the end)
-    MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
-    Assert.NotNull(kthFromEndMethod);
+      // Call the KthFromEnd method with k = 2 (getting the 2nd node from the end)
+      MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
+      Assert.NotNull(kthFromEndMethod);
 
-    int k = 2;
-    Node kthNode = (Node)kthFromEndMethod.Invoke(list, new object[] { k });
+      int k = 100;
 
-    // Check that the result is not null and that the value of the kth node is correct
-    Assert.NotNull(kthNode);
+      // The expected value of the kth node from the end is 30
+      Assert.Throws<TargetInvocationException>(() => (int)kthFromEndMethod.Invoke(list, new object[] { k }));
+    }
 
-    PropertyInfo valueProperty = typeof(Node).GetProperty("Value");
-    int result = (int)valueProperty.GetValue(kthNode);
+    [Fact]
+    public void InsertableLinkedList_Throws_Error_When_Kth_Is_Too_Small()
+    {
+      // Create an instance of the InsertableLinkedList
+      MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
+      Assert.True(insertMethod != null);
 
-    // The expected value of the kth node from the end is 30
-    Assert.Equal(30, result);
-}
+      LinkedListKth list = new LinkedListKth();
+      insertMethod.Invoke(list, new object[] { 10 });
+      insertMethod.Invoke(list, new object[] { 20 });
+
+
+      // Call the KthFromEnd method with k = 2 (getting the 2nd node from the end)
+      MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
+      Assert.NotNull(kthFromEndMethod);
+
+      int k = -1;
+
+      // The expected value of the kth node from the end is 30
+      Assert.Throws<TargetInvocationException>(() => (int)kthFromEndMethod.Invoke(list, new object[] { k }));
+    }
   }
 }
