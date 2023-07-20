@@ -116,7 +116,11 @@ namespace CodeChallengeTests
       LinkedListKth result = CodeChallenge8.ZipLists(list1, list2);
       MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
 
-      Assert.Null(result.Head);
+      PropertyInfo headProperty = typeof(LinkedListKth).GetProperty("Head");
+        Node resultHeadNode = (Node)headProperty.GetValue(result);
+
+
+      Assert.Null(resultHeadNode);
     }
   }
 }

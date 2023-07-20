@@ -2,7 +2,7 @@ namespace CodeChallenges
 {
   public class CodeChallenge9
   {
-    public void ReverseLinkedList(LinkedListKth list)
+    public static void ReverseLinkedList(LinkedListKth list)
     {
       Node prev = null;
       Node current = list.Head;
