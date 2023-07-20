@@ -65,6 +65,8 @@ namespace CodeChallengeTests
       Node headValue2 = (Node)NextProperty.GetValue(headValue);
 
       int result2 = (int)ValueProperty.GetValue(headValue2);
+      Node headValue3 = (Node)NextProperty.GetValue(headValue);
+
 
       Assert.Equal(value2, result1);
       Assert.Equal(value, result2);
