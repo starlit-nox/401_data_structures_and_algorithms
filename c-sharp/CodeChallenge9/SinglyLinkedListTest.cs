@@ -81,7 +81,7 @@ namespace CodeChallengeTests
     }
 
     [Fact]
-    public void IsPalindrome_Test()
+    public void IsPalindrome_Returns_True_For_Palindrome()
     {
       // Create an instance of the InsertableLinkedList
       MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
@@ -91,45 +91,29 @@ namespace CodeChallengeTests
       insertMethod.Invoke(list, new object[] { 10 });
       insertMethod.Invoke(list, new object[] { 20 });
       insertMethod.Invoke(list, new object[] { 30 });
-      insertMethod.Invoke(list, new object[] { 40 });
-      insertMethod.Invoke(list, new object[] { 50 });
+      insertMethod.Invoke(list, new object[] { 20 });
+      insertMethod.Invoke(list, new object[] { 10 });
 
       // Act
-      CodeChallenge9.ReverseLinkedList(list);
-      PropertyInfo headProperty = typeof(LinkedListKth).GetProperty("Head");
-      PropertyInfo valueProperty = typeof(Node).GetProperty("Value");
-      PropertyInfo nextProperty = typeof(Node).GetProperty("Next");
+      bool result = CodeChallenge9.IsPalindrome(list);
+      Assert.True(result);
+    }
 
-      Node head = (Node)headProperty.GetValue(list);
-      int value1 = (int)valueProperty.GetValue(head);
+    [Fact]
+    public void IsPalindrome_Returns_False_For_NonPalindrome()
+    {
+      // Create an instance of the InsertableLinkedList
+      MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
+      Assert.True(insertMethod != null);
 
-      Node node2 = (Node)nextProperty.GetValue(head);
-      int value2 = (int)valueProperty.GetValue(node2);
+      LinkedListKth list = new LinkedListKth();
+      insertMethod.Invoke(list, new object[] { 10 });
+      insertMethod.Invoke(list, new object[] { 20 });
+      insertMethod.Invoke(list, new object[] { 30 });
 
-      Node node3 = (Node)nextProperty.GetValue(node2);
-      int value3 = (int)valueProperty.GetValue(node3);
-
-      Node node4 = (Node)nextProperty.GetValue(node3);
-      int value4 = (int)valueProperty.GetValue(node4);
-
-      Node node5 = (Node)nextProperty.GetValue(node4);
-      int value5 = (int)valueProperty.GetValue(node5);
-      // Arrange
-      // LinkedListKth list = new LinkedListKth();
-      // list.Head = new Node(1);
-      // list.Head.Next = new Node(2);
-      // list.Head.Next.Next = new Node(3);
-      // list.Head.Next.Next.Next = new Node(4);
-
-      // // Act
-      // CodeChallenge9.ReverseLinkedList(list);
-
-      // // Assert
-      // Assert.Equal(10, list.Head.Value);
-      // Assert.Equal(3, list.Head.Next.Value);
-      // Assert.Equal(2, list.Head.Next.Next.Value);
-      // Assert.Equal(1, list.Head.Next.Next.Next.Value);
-      // Assert.Null(list.Head.Next.Next.Next.Next);
+      // Act
+      bool result = CodeChallenge9.IsPalindrome(list);
+      Assert.False(result);
     }
   }
 }

@@ -4,13 +4,13 @@ namespace CodeChallenges
   {
     public static LinkedListKth ReverseLinkedList(LinkedListKth list)
     {
-      LinkedListKth reversedList = new LinkedListKth();
-      return reversedList;
+      return list;
     }
 
-    public bool IsPalindrome()
+    public static bool IsPalindrome(LinkedListKth list)
     {
-      return false;
+      bool isPalindrome = false;
+      return isPalindrome;
     }
   }
 }
