@@ -1,15 +1,16 @@
 using System;
 using System.Reflection;
 using Xunit;
+using CodeChallenges;
 
-namespace CodeChallenges.Tests
+namespace CodeChallengeTests
 {
-    public class StackAndQueueTests
+    public class CodeChallenge10Tests
     {
         private readonly Type stackType;
         private readonly Type queueType;
 
-        public StackAndQueueTests()
+        public CodeChallenge10Tests()
         {
             stackType = typeof(Stack);
             queueType = typeof(Queue);
