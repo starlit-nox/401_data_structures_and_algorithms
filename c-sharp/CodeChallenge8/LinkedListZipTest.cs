@@ -117,8 +117,7 @@ namespace CodeChallengeTests
       MethodInfo kthFromEndMethod = typeof(LinkedListKth).GetMethod("KthFromEnd");
 
       PropertyInfo headProperty = typeof(LinkedListKth).GetProperty("Head");
-        Node resultHeadNode = (Node)headProperty.GetValue(result);
-
+      Node resultHeadNode = (Node)headProperty.GetValue(result);
 
       Assert.Null(resultHeadNode);
     }
