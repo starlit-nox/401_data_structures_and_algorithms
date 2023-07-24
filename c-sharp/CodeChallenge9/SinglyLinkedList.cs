@@ -7,7 +7,7 @@ namespace CodeChallenges
 
     }
 
-    public bool IsPalindrome()
+    public bool IsPalindrome(LinkedListKth list)
     {
       return false;
     }
