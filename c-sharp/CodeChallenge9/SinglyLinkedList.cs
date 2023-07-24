@@ -2,12 +2,13 @@ namespace CodeChallenges
 {
   public class CodeChallenge9
   {
-    public static void ReverseLinkedList(LinkedListKth list)
+    public static LinkedListKth ReverseLinkedList(LinkedListKth list)
     {
-
+      LinkedListKth reversedList = new LinkedListKth();
+      return reversedList;
     }
 
-    public bool IsPalindrome(LinkedListKth list)
+    public bool IsPalindrome()
     {
       return false;
     }
