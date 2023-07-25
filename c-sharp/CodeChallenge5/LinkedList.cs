@@ -1,15 +1,15 @@
-namespace CodeChallenges 
+namespace CodeChallenges
 {
-    public class LinkedList
-    {
-        // public Node Head {get; set;}
+  public class LinkedList
+  {
+    // public Node Head {get; set;}
 
 
 
-    }
+  }
 
-    public class Node
-    {
+  public class Node
+  {
 
-    }
+  }
 }
