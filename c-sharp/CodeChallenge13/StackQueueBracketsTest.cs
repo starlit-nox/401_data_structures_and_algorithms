@@ -1,9 +1,9 @@
 using StackQueueBracketss;
 using Xunit;
 
-namespace StackQueueBracketsTests
+namespace CodeChallengeTests
 {
-  public class StackQueueBracketsTest
+  public class CodeChallenge13Tests
   {
     [Fact]
     public void ValidateBrackets_Test()

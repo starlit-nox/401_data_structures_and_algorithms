@@ -1,9 +1,9 @@
 using StackAndQueueAnimalShelters;
 using Xunit;
 
-namespace StackAndQueueAnimalShelterTests
+namespace CodeChallengeTests
 {
-  public class StackAndQueueAnimalShelterTest
+  public class CodeChallenge12Tests
   {
     [Fact]
     public void Enqueue_Test()

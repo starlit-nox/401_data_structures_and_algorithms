@@ -1,9 +1,9 @@
 using StackQueuePsuedos;
 using Xunit;
 
-namespace StackQueuePsuedoTests
+namespace CodeChallengeTests
 {
-  public class StackQueuePsuedoTest
+  public class CodeChallenge11Tests
   {
     [Fact]
     public void Enqueue_Test()
