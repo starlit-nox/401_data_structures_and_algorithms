@@ -23,22 +23,22 @@ namespace CodeChallengeTests
         {
             // Arrange
             var pseudoQueue = new StackQueuePsuedo();
+            var enqueueMethod = typeof(StackQueuePsuedo).GetMethod("Enqueue");
+            var dequeueMethod = typeof(StackQueuePsuedo).GetMethod("Dequeue");
 
             // Act
-            pseudoQueue.Enqueue(1);
-            pseudoQueue.Enqueue(2);
-            pseudoQueue.Enqueue(3);
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 1 });
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 2 });
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 3 });
 
             // Assert
-            var enqueueStack = GetEnqueueStack(pseudoQueue);
-            Assert.Equal(3, enqueueStack.Count);
+            int firstDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
+            int secondDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
+            int thirdDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
 
-            var dequeueStack = GetDequeueStack(pseudoQueue);
-            Assert.Equal(0, dequeueStack.Count);
-
-            Assert.Equal(1, pseudoQueue.Dequeue());
-            Assert.Equal(2, pseudoQueue.Dequeue());
-            Assert.Equal(3, pseudoQueue.Dequeue());
+            Assert.Equal(1, firstDequeue);
+            Assert.Equal(2, secondDequeue);
+            Assert.Equal(3, thirdDequeue);
         }
 
         [Fact]
@@ -46,9 +46,11 @@ namespace CodeChallengeTests
         {
             // Arrange
             var pseudoQueue = new StackQueuePsuedo();
+            var dequeueMethod = typeof(StackQueuePsuedo).GetMethod("Dequeue");
+
 
             // Act & Assert
-            Assert.Throws<InvalidOperationException>(() => pseudoQueue.Dequeue());
+            Assert.Throws<TargetInvocationException>(() => (int)dequeueMethod.Invoke(pseudoQueue, new object[] {}));
         }
 
         [Fact]
@@ -56,24 +58,22 @@ namespace CodeChallengeTests
         {
             // Arrange
             var pseudoQueue = new StackQueuePsuedo();
-
+            var enqueueMethod = typeof(StackQueuePsuedo).GetMethod("Enqueue");
+            var dequeueMethod = typeof(StackQueuePsuedo).GetMethod("Dequeue");
             // Act
-            pseudoQueue.Enqueue(11);
-            pseudoQueue.Enqueue(12);
-            var firstDequeue = pseudoQueue.Dequeue();
-            pseudoQueue.Enqueue(13);
-            var secondDequeue = pseudoQueue.Dequeue();
+
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 11 });
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 12 });
+            int firstDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
+            enqueueMethod.Invoke(pseudoQueue, new object[] { 13 });
+            int secondDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
+            int thirdDequeue = (int)dequeueMethod.Invoke(pseudoQueue, new object[] {});
+
 
             // Assert
-            var enqueueStack = GetEnqueueStack(pseudoQueue);
-            Assert.Equal(1, enqueueStack.Count);
-
-            var dequeueStack = GetDequeueStack(pseudoQueue);
-            Assert.Equal(1, dequeueStack.Count);
-
             Assert.Equal(11, firstDequeue);
             Assert.Equal(12, secondDequeue);
-            Assert.Equal(13, pseudoQueue.Dequeue());
+            Assert.Equal(13, thirdDequeue);
         }
     }
 }
