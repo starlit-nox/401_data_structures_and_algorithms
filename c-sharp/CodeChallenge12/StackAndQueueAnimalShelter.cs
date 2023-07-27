@@ -1,4 +1,4 @@
-namespace StackAndQueueAnimalShelters 
+namespace CodeChallenges 
 {
 
     public class Animal
@@ -14,9 +14,9 @@ namespace StackAndQueueAnimalShelters
             
         }
 
-        public Animal Dequeue(string pref)
-        {
+        // public Animal Dequeue(string pref)
+        // {
             
-        }
+        // }
     }
 }
