@@ -8,20 +8,22 @@ namespace CodeChallengeTests
   {
     private MethodInfo EnqueueMethod;
     private MethodInfo DequeueMethod;
+    private ConstructorInfo AnimalConstructorMethod;
     public CodeChallenge12Tests()
     {
       EnqueueMethod = typeof(AnimalShelter).GetMethod("Enqueue");
       DequeueMethod = typeof(AnimalShelter).GetMethod("Dequeue");
+      AnimalConstructorMethod = typeof(Animal).GetConstructor(new Type[] { typeof(string), typeof(string) });
     }
     [Fact]
     public void Enqueue_Should_Add_Dog_To_DogsQueue()
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var dog = new Animal { Species = "dog", Name = "Max" };
+      var dog = AnimalConstructorMethod.Invoke(new object[] { "dog", "Max" });
       // Act
       EnqueueMethod.Invoke(animalShelter, new object[] { dog });
-      var result = DequeueMethod.Invoke(animalShelter, new object[] {"dog"});
+      var result = DequeueMethod.Invoke(animalShelter, new object[] { "dog" });
       // Assert
       Assert.Equal(dog, result);
     }
@@ -31,7 +33,7 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var cat = new Animal { Species = "cat", Name = "Whiskers" };
+      var cat = AnimalConstructorMethod.Invoke(new object[] { "cat", "Whiskers" });
 
       // Act
       EnqueueMethod.Invoke(animalShelter, new object[] { cat });
@@ -46,7 +48,7 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var bird = new Animal { Species = "bird", Name = "Tweety" };
+      var bird = AnimalConstructorMethod.Invoke(new object[] { "bird", "Tweety" });
 
       // Act
       EnqueueMethod.Invoke(animalShelter, new object[] { bird });
@@ -62,12 +64,11 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var dog1 = new Animal { Species = "dog", Name = "Rover" };
-      var dog2 = new Animal { Species = "dog", Name = "Buddy" };
+      var dog1 = AnimalConstructorMethod.Invoke(new object[] { "dog", "Rover" });
+      var dog2 = AnimalConstructorMethod.Invoke(new object[] { "dog", "Buddy" });
 
       EnqueueMethod.Invoke(animalShelter, new object[] { dog1 });
       EnqueueMethod.Invoke(animalShelter, new object[] { dog2 });
-
 
       // Act
       var result = DequeueMethod.Invoke(animalShelter, new object[] { "dog" });
@@ -81,14 +82,14 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var cat1 = new Animal { Species = "cat", Name = "Fluffy" };
-      var cat2 = new Animal { Species = "cat", Name = "Whiskers" };
+      var cat1 = AnimalConstructorMethod.Invoke(new object[] { "cat", "Fluffy" });
+      var cat2 = AnimalConstructorMethod.Invoke(new object[] { "cat", "Whiskers" });
 
       EnqueueMethod.Invoke(animalShelter, new object[] { cat1 });
       EnqueueMethod.Invoke(animalShelter, new object[] { cat2 });
 
       // Act
-      var result = DequeueMethod.Invoke(animalShelter, new object[] { "cat"});
+      var result = DequeueMethod.Invoke(animalShelter, new object[] { "cat" });
 
       // Assert
       Assert.Equal(cat1, result);
@@ -99,7 +100,7 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var dog = new Animal { Species = "dog", Name = "Buddy" };
+      var dog = AnimalConstructorMethod.Invoke(new object[] { "dog", "Buddy" });
 
       EnqueueMethod.Invoke(animalShelter, new object[] { dog });
 
@@ -115,7 +116,7 @@ namespace CodeChallengeTests
     {
       // Arrange
       var animalShelter = new AnimalShelter();
-      var cat = new Animal { Species = "cat", Name = "Whiskers" };
+      var cat = AnimalConstructorMethod.Invoke(new object[] { "cat", "Whiskers" });
 
       EnqueueMethod.Invoke(animalShelter, new object[] { cat });
       // Act
