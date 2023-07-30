@@ -1,10 +1,10 @@
-namespace StackQueueBracketss 
+namespace CodeChallenges 
 {
-    public class StackQueueBrackets
+    public class CodeChallenge13
     {
-        public void ValidateBrackets()
+        public bool ValidateBrackets(string syntax)
         {
-            
+            return false;
         }
     }
 }
