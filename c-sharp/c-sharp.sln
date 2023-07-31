@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge12", "CodeChal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge13", "CodeChallenge13\CodeChallenge13.csproj", "{3ECBEB44-CF69-4D4D-AA46-290E2B436ECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge14", "CodeChallenge14\CodeChallenge14.csproj", "{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,5 +200,17 @@ Global
 		{3ECBEB44-CF69-4D4D-AA46-290E2B436ECB}.Release|x64.Build.0 = Release|Any CPU
 		{3ECBEB44-CF69-4D4D-AA46-290E2B436ECB}.Release|x86.ActiveCfg = Release|Any CPU
 		{3ECBEB44-CF69-4D4D-AA46-290E2B436ECB}.Release|x86.Build.0 = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|x64.Build.0 = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|x64.ActiveCfg = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|x64.Build.0 = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C51B48A-28BF-4F01-B2AF-EA72E12393EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
