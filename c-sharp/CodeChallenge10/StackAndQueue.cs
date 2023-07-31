@@ -1,84 +1,38 @@
 namespace CodeChallenges
 {
-  public class Node
-  {
-    public int Value { get; set; }
-    public Node Next { get; set; }
-
-    public Node(int value)
-    {
-      Value = value;
-      Next = null;
-    }
-  }
-
-  public class Stack
-  {
-    private Node Top { get; set; }
-
-    public Stack()
-    {
-      Top = null;
-    }
-
-    public void Push(int value)
-    {
-      Node newNode = new Node(value) { Next = Top };
-      Top = newNode;
-    }
-
-    public int Pop()
-    {
-      if (Top == null)
-      {
-        throw new InvalidOperationException("The stack is empty.");
-      }
-
-      int value = Top.Value;
-      Top = Top.Next;
-      return value;
-    }
-
-    public int Peek()
-    {
-      if (Top == null)
-      {
-        throw new InvalidOperationException("The stack is empty.");
-      }
-
-      return Top.Value;
-    }
-
-    public bool IsEmpty()
-    {
-      return Top == null;
-    }
-  }
-
   public class Queue
   {
     private Node Front { get; set; }
-    private Node Rear { get; set; }
+    private Node Back { get; set; }
 
-    public Queue()
+    public Queue(Node node)
     {
-      Front = null;
-      Rear = null;
+      Front = node;
+      Back = node;
     }
 
     public void Enqueue(int value)
     {
       Node newNode = new Node(value);
 
-      if (Rear == null)
+      if (Front == null) // Empty queue
       {
         Front = newNode;
-        Rear = newNode;
+        // If the queue is empty, the new node will be both the Front and Back node.
+        Back = newNode;
+      }
+      else if (Back == null)
+      {
+        // If the Back node is null, it means there is only one element in the queue.
+        // In this case, the new node becomes the Back node, and the Front node's Next points to the Back node.
+        Back = newNode;
+        Front.Next = Back;
       }
       else
       {
-        Rear.Next = newNode;
-        Rear = newNode;
+        // If the Back node is not null, we add the new node to the Back and update the Back pointer.
+        Back.Next = newNode;
+        Back = newNode;
       }
     }
 
@@ -86,7 +40,10 @@ namespace CodeChallenges
     {
       if (Front == null)
       {
-        throw new InvalidOperationException("The queue is empty.");
+        // Handle the case when trying to dequeue from an empty queue.
+        // You can choose to return a default value or take any other appropriate action.
+        // For example, you can return -1 or throw a custom exception, etc.
+        return -1;
       }
 
       int value = Front.Value;
@@ -94,7 +51,7 @@ namespace CodeChallenges
 
       if (Front == null)
       {
-        Rear = null;
+        Back = null;
       }
 
       return value;
@@ -104,7 +61,7 @@ namespace CodeChallenges
     {
       if (Front == null)
       {
-        throw new InvalidOperationException("The queue is empty.");
+        throw new Exception("The queue is empty.");
       }
 
       return Front.Value;
