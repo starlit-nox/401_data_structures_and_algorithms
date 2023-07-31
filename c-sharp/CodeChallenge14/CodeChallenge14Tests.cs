@@ -24,7 +24,7 @@ namespace CodeChallengeTests
     [Fact]
     public void TestMaxStack()
     {
-      MaxStack maxStack = new MaxStack();
+      CodeChallenge14.MaxStack maxStack = new CodeChallenge14.MaxStack();
 
       // Use InvokePrivateMethod to call private methods (Push, Pop, Peek, GetMax)
       InvokePrivateMethod(maxStack, "Push", 5);
