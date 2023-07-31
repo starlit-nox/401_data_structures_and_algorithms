@@ -2,7 +2,7 @@ namespace CodeChallenges
 {
     public class CodeChallenge13
     {
-        public bool ValidateBrackets(string syntax)
+        public static bool ValidateBrackets(string syntax)
         {
             return false;
         }
