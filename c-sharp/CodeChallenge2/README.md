@@ -15,4 +15,3 @@ Write a function called InsertShiftArray which takes in an array and a value to 
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-
