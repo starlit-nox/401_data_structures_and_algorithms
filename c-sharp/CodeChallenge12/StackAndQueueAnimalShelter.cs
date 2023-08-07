@@ -1,10 +1,22 @@
-namespace StackAndQueueAnimalShelters 
+namespace CodeChallenges
 {
-    public class StackAndQueueAnimalShelter
+
+  public class Animal
+  {
+
+  }
+
+
+  public class StackAndQueueAnimalShelter
+  {
+    public void Enqueue(Animal animal)
     {
-        public void Enqueue()
-        {
-            
-        }
+
     }
+
+    // public Animal Dequeue(string pref)
+    // {
+
+    // }
+  }
 }
