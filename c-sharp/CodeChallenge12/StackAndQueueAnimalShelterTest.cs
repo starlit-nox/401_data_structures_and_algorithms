@@ -1,6 +1,6 @@
 using CodeChallenges;
-using System.Reflection;
 using Xunit;
+using System.Reflection;
 
 namespace CodeChallengeTests
 {
